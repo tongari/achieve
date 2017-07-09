@@ -15,5 +15,6 @@
  */
 
 .mypage-thumb{
-  max-width: 80px;
+  max-width: 50px;
+  border-radius: 50%;
 }
