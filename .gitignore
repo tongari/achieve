@@ -17,3 +17,4 @@
 front/node_modules/
 .idea/
 .editorconfig
+.env

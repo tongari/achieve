@@ -47,6 +47,8 @@ group :development, :test do
   gem 'pry-rails'
 
   gem 'better_errors'
+
+  gem 'dotenv-rails'
 end
 
 gem 'twitter-bootstrap-rails'
@@ -64,3 +66,10 @@ gem 'rails_admin'
 gem 'cancan'
 
 gem 'activeresource'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+gem 'carrierwave'
+gem 'mini_magick'
