@@ -4,13 +4,13 @@
     <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
 
       <%= link_to user_path(user.id) do %>
-      <%= profile_img(user) %>
-      <%= user.email %>
+          <%= profile_img(user) %><br>
+          <%= user.email %>
       <% end %>
       <% if current_user.id != user.id %>
-        <%= render 'follow_form', user: user %>
+          <p><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%></p>
+          <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
       <% end %>
-
     </div>
   <% end %>
 </div>
