@@ -4,10 +4,12 @@
     <%= profile_img(user) %>
     <%= user.name %>
     <% unless current_user.following?(user) %>
+      <div id="follow_form_<%= user.id %>">
       <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
         <%= f.hidden_field :followed_id %>
         <%= f.submit "フォロー", class: "btn btn-large btn-primary" %>
       <% end %>
+      </div>
     <% end %>
   </li>
 <% end %>
