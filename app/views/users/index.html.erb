@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>ユーザー一覧</h2>
+  <% @users.each do |user| %>
+    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+
+      <%= link_to user_path(user.id) do %>
+      <%= profile_img(user) %>
+      <%= user.email %>
+      <% end %>
+      <% if current_user.id != user.id %>
+        <%= render 'follow_form', user: user %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

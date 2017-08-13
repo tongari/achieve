@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>ユーザー詳細</h2>
+  <%= profile_img(@user) %>
+  <%= @user.name %><br><br>
+  <span>メールアドレス : </span><%= @user.email %>
+
+  <h3 class="user__title">フォローしているユーザー</h3>
+  <%= render 'followed', followed: @followed %>
+
+  <h3 class="user__title">フォローされているユーザー</h3>
+  <%= render 'followers', followers: @followers %>
+</div>
