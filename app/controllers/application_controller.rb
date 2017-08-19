@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
 
+  before_action :current_notifications, if: :signed_in?
+
+  def current_notifications
+    @notifications_count = Notification.where(user_id: current_user.id).where(read: false).count
+  end
+
+
+
  # 他のエラーハンドリングでキャッチできなかった時は、500エラーを発生させる
   rescue_from Exception, with: :error_500 unless Rails.env.development?
 

@@ -8,8 +8,8 @@
           <%= user.email %>
       <% end %>
       <% if current_user.id != user.id %>
-          <p><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%></p>
-          <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
+        <p><%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%></p>
+        <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
       <% end %>
     </div>
   <% end %>
