@@ -44,7 +44,7 @@ set :application, 'achieve'
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
 set :repo_url, 'https://github.com/tongari/achieve'
 
-BRANCH='aws'
+# BRANCH='aws'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
